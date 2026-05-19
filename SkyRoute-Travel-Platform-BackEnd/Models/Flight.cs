@@ -15,7 +15,6 @@ namespace SkyRoute_Travel_Platform_BackEnd.Models
         public TimeSpan Duration { get; private set; }
         public CabinClass CabinClass { get; set; } // This is the cabin class (Economy, Business, First)
         public decimal BaseFare { get; private set; }
-        public decimal FinalPrice { get; set; }
     }
 }
 

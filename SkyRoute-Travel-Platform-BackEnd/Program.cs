@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using SkyRoute_Travel_Platform_BackEnd.Data;
+using SkyRoute_Travel_Platform_BackEnd.Providers;
+using SkyRoute_Travel_Platform_BackEnd.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -16,11 +18,20 @@ builder.Services.AddCors(options =>
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseInMemoryDatabase("SkyRouteDb")); // We define an in-memory database.
 
+builder.Services.AddScoped<IFlightProvider, GlobalAirProvider>();
+builder.Services.AddScoped<IFlightProvider, BudgetWindsProvider>();
 
+builder.Services.AddScoped<FlightService>(); // Aggregate for FlightsController 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
+    dbContext.Database.EnsureCreated();
+}
 
 if (app.Environment.IsDevelopment())
 {

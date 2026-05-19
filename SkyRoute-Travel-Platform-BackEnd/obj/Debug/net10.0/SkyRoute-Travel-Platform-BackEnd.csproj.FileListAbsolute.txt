@@ -78,3 +78,9 @@ C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-Backend\obj\Debug
 C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-Backend\obj\Debug\net10.0\SkyRoute-Travel-Platform-BackEnd.genruntimeconfig.cache
 C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-Backend\obj\Debug\net10.0\ref\SkyRoute-Travel-Platform-BackEnd.dll
 C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-Backend\bin\Debug\net10.0\Swashbuckle.AspNetCore.Annotations.dll
+C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\bin\Debug\net10.0\nuget.config
+C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\bin\Debug\net10.0\Castle.Core.dll
+C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\bin\Debug\net10.0\Moq.dll
+C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\bin\Debug\net10.0\xunit.abstractions.dll
+C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\bin\Debug\net10.0\xunit.assert.dll
+C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\bin\Debug\net10.0\xunit.core.dll

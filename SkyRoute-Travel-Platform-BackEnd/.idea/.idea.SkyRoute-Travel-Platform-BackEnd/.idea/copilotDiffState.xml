@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CopilotDiffPersistence">
+    <option name="pendingDiffs">
+      <map>
+        <entry key="$PROJECT_DIR$/SkyRoute.Tests/UnitTest1.cs">
+          <value>
+            <PendingDiffInfo>
+              <option name="filePath" value="$PROJECT_DIR$/SkyRoute.Tests/UnitTest1.cs" />
+              <option name="originalContent" value="using Microsoft.AspNetCore.Http.HttpResults;&#10;using Microsoft.AspNetCore.Mvc;&#10;using Microsoft.EntityFrameworkCore;&#10;using Moq;&#10;using SkyRoute_Travel_Platform_BackEnd.Controllers;&#10;using SkyRoute_Travel_Platform_BackEnd.Models;&#10;using SkyRoute_Travel_Platform_BackEnd.Services;&#10;using SkyRoute_Travel_Platform_BackEnd.Data;&#10;using SkyRoute_Travel_Platform_BackEnd.Providers;&#10;&#10;namespace SkyRoute.Tests;&#10;&#10;public class UnitTest1&#10;{&#10;    private readonly FlightsController _controller;&#10;    private readonly Mock&lt;FlightService&gt; _mockFlightService;&#10;    &#10;    [Fact]&#10;    public async Task Test1()&#10;    {&#10;        //Arrange&#10;        string flightNumber = &quot;GA100&quot;;&#10;        &#10;        //Act&#10;        var result = await controller.GetByFlightNumber(flightNumber);&#10;        &#10;        //Assert&#10;        var okResult = Assert.IsType&lt;OkObjectResult&gt;(result.Result);&#10;        var flight = Assert.IsType&lt;Flight&gt;(okResult.Value);&#10;&#10;        // Múltiples aserciones para verificar que es el vuelo real de la base de datos&#10;        Assert.Equal(flightNumber, flight.FlightNumber);&#10;        Assert.Equal(&quot;GlobalAir&quot;, flight.Provider);&#10;        Assert.Equal(&quot;JFK&quot;, flight.Origin);&#10;        Assert.Equal(&quot;LHR&quot;, flight.Destination);&#10;        Assert.Equal(450.00m, flight.BaseFare);&#10;    }&#10;}&#10;" />
+              <option name="updatedContent" value="using Microsoft.AspNetCore.Http.HttpResults;&#10;using Microsoft.AspNetCore.Mvc;&#10;using Microsoft.EntityFrameworkCore;&#10;using Moq;&#10;using SkyRoute_Travel_Platform_BackEnd.Controllers;&#10;using SkyRoute_Travel_Platform_BackEnd.Models;&#10;using SkyRoute_Travel_Platform_BackEnd.Services;&#10;using SkyRoute_Travel_Platform_BackEnd.Data;&#10;using SkyRoute_Travel_Platform_BackEnd.Providers;&#10;&#10;namespace SkyRoute.Tests;&#10;&#10;public class UnitTest1&#10;{&#10;    private readonly FlightsController _controller;&#10;    private readonly Mock&lt;FlightService&gt; _mockFlightService;&#10;&#10;    [Fact]&#10;    public async Task Test1()&#10;    {&#10;        //Arrange&#10;        string flightNumber = &quot;GA100&quot;;&#10;        &#10;        //Act&#10;        var result = await controller.GetByFlightNumber(flightNumber);&#10;        &#10;        //Assert&#10;        var okResult = Assert.IsType&lt;OkObjectResult&gt;(result.Result);&#10;        var flight = Assert.IsType&lt;Flight&gt;(okResult.Value);&#10;&#10;        // Múltiples aserciones para verificar que es el vuelo real de la base de datos&#10;        Assert.Equal(flightNumber, flight.FlightNumber);&#10;        Assert.Equal(&quot;GlobalAir&quot;, flight.Provider);&#10;        Assert.Equal(&quot;JFK&quot;, flight.Origin);&#10;        Assert.Equal(&quot;LHR&quot;, flight.Destination);&#10;        Assert.Equal(450.00m, flight.BaseFare);&#10;    }&#10;}" />
+            </PendingDiffInfo>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

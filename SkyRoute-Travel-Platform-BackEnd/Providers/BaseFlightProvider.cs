@@ -17,11 +17,6 @@ public abstract class BaseFlightProvider(AppDbContext _dbContext, string _provid
             .Where(f => f.Provider == _providerName && f.Origin == request.Origin && f.Destination == request.Destination && f.Departure.Date == request.DepartureDate.Date)
             .ToListAsync();
         
-        foreach (Flight flight in flights)
-        {
-            flight.FinalPrice = CalculatePrice(flight.BaseFare) * request.Passengers;
-        }
-
         return flights;
     }
 }

@@ -7,6 +7,7 @@ namespace SkyRoute_Travel_Platform_BackEnd.Data
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
+            Database.EnsureCreated();
         }
 
         public DbSet<Booking> Bookings { get; set; }
@@ -26,8 +27,8 @@ namespace SkyRoute_Travel_Platform_BackEnd.Data
                     FlightNumber = "GA100",
                     Origin = "JFK",
                     Destination = "LHR",
-                    Departure = DateTimeOffset.UtcNow.AddDays(10),
-                    Arrival = DateTimeOffset.UtcNow.AddDays(10).AddHours(7),
+                    Departure = new DateTimeOffset(2026, 5, 29, 10, 0, 0, TimeSpan.Zero),
+                    Arrival = new DateTimeOffset(2026, 5, 29, 17, 0, 0, TimeSpan.Zero),
                     Duration = TimeSpan.FromHours(7),
                     CabinClass = Enums.CabinClass.Economy,
                     BaseFare = 450.00m
@@ -39,8 +40,8 @@ namespace SkyRoute_Travel_Platform_BackEnd.Data
                     FlightNumber = "BW200",
                     Origin = "JFK",
                     Destination = "CDG",
-                    Departure = DateTimeOffset.UtcNow.AddDays(15),
-                    Arrival = DateTimeOffset.UtcNow.AddDays(15).AddHours(8),
+                    Departure = new DateTimeOffset(2026, 6, 3, 10, 0, 0, TimeSpan.Zero),
+                    Arrival = new DateTimeOffset(2026, 6, 3, 18, 0, 0, TimeSpan.Zero),
                     Duration = TimeSpan.FromHours(8),
                     CabinClass = Enums.CabinClass.Business,
                     BaseFare = 320.50m
@@ -52,8 +53,8 @@ namespace SkyRoute_Travel_Platform_BackEnd.Data
                     FlightNumber = "GA300",
                     Origin = "LHR",
                     Destination = "JFK",
-                    Departure = DateTimeOffset.UtcNow.AddDays(20),
-                    Arrival = DateTimeOffset.UtcNow.AddDays(20).AddHours(8),
+                    Departure = new DateTimeOffset(2026, 6, 8, 10, 0, 0, TimeSpan.Zero),
+                    Arrival = new DateTimeOffset(2026, 6, 8, 18, 0, 0, TimeSpan.Zero),
                     Duration = TimeSpan.FromHours(8),
                     CabinClass = Enums.CabinClass.First,
                     BaseFare = 500.00m

@@ -5,12 +5,19 @@ using SkyRoute_Travel_Platform_BackEnd.Providers;
 
 namespace SkyRoute_Travel_Platform_BackEnd.Services;
 
-public class FlightService(IFlightProvider flightProvider) 
+public class FlightService(IEnumerable<IFlightProvider> flightProviders) 
 {
     public async Task<List<Flight>> SearchFlights(FlightSearchRequestDto request)
     {
-        IEnumerable<Flight> flights = await flightProvider.SearchFlights(request);
-        return flights.ToList();
+        var allFlights = new List<Flight>();
+        
+        foreach (var provider in flightProviders)
+        {
+            IEnumerable<Flight> flights = await provider.SearchFlights(request);
+            allFlights.AddRange(flights);
+        }
+        
+        return allFlights;
     }
     
 }
