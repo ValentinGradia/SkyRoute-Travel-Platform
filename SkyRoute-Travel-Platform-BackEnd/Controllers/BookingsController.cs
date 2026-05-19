@@ -5,8 +5,8 @@ using SkyRoute_Travel_Platform_BackEnd.DTOs;
 namespace SkyRoute_Travel_Platform_BackEnd.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
-    public class BookingsController(AppDbContext _dbContext) : ControllerBase
+    [Route("api/bookings")]
+    public class BookingsController() : ControllerBase
     {
         // POST api/bookings
         [HttpPost]
@@ -22,6 +22,14 @@ namespace SkyRoute_Travel_Platform_BackEnd.Controllers
             };
 
             return Ok(response);
+        }
+        
+        // GET api/bookings/{id}
+        [HttpGet("{id}")]
+        public ActionResult<BookingResponseDto> Get([FromRoute] string id)
+        {
+            // TODO: Implement booking retrieval logic in Phase 2
+            return NotFound();
         }
     }
 }

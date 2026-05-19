@@ -1,10 +1,16 @@
-﻿using SkyRoute_Travel_Platform_BackEnd.Models;
+﻿using SkyRoute_Travel_Platform_BackEnd.DTOs;
+using SkyRoute_Travel_Platform_BackEnd.Models;
 
 namespace SkyRoute_Travel_Platform_BackEnd.Providers;
 
 public class GlobalAirProvider : IFlightProvider
 {
     public decimal CalculatePrice(Booking booking)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task<IEnumerable<Flight>> SearchFlights(FlightSearchRequestDto request)
     {
         throw new NotImplementedException();
     }
