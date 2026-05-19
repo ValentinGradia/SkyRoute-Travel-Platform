@@ -19,7 +19,7 @@ public abstract class BaseFlightProvider(AppDbContext _dbContext, string _provid
         
         foreach (Flight flight in flights)
         {
-            flight.FinalPrice = CalculatePrice(flight.BaseFare);
+            flight.FinalPrice = CalculatePrice(flight.BaseFare) * request.Passengers;
         }
 
         return flights;

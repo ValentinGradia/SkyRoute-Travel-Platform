@@ -6,7 +6,7 @@ using SkyRoute_Travel_Platform_BackEnd.Services;
 namespace SkyRoute_Travel_Platform_BackEnd.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/flights")]
     public class FlightsController(FlightService _flightService) : ControllerBase
     {
         // GET api/flights/search
