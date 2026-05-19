@@ -13,7 +13,7 @@ namespace SkyRoute_Travel_Platform_BackEnd.DTOs
         public decimal FinalPrice { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }
-        public string DocumentNumber { get; set; }
+        public int DocumentNumber { get; set; }
     }
 
 }

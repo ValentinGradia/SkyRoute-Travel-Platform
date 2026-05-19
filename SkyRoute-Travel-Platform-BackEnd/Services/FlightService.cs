@@ -11,6 +11,6 @@ public class FlightService(IFlightProvider flightProvider)
     {
         IEnumerable<Flight> flights = await flightProvider.SearchFlights(request);
         return flights.ToList();
-
     }
+    
 }
