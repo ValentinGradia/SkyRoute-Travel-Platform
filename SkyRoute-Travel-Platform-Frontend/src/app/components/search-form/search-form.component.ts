@@ -1,15 +1,18 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IFlightRequest } from '../../interfaces/IFlightRequest';
+import { IFlightResponse } from '../../interfaces/IFlightResponse';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-search-form',
   standalone: true,
-  imports: [FormsModule],
+  imports: [CommonModule, FormsModule],
   templateUrl: './search-form.component.html',
   styleUrl: './search-form.component.css'
 })
 export class SearchFormComponent {
+  flights: IFlightResponse[] = []
   airports = [
     { code: 'EZE', label: 'Buenos Aires (EZE), Argentina' },
     { code: 'AEP', label: 'Buenos Aires (AEP), Argentina' },
@@ -37,6 +40,8 @@ export class SearchFormComponent {
     }
 
     this.flightRequest.departureDate = new Date(this.departureDateInput);
+
+    console.log(this.flightRequest)
   }
 
 }
