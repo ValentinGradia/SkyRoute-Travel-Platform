@@ -4,4 +4,6 @@ public class CabinResult
 {
     public int AvailableSeats { get; set; }
     public decimal Fare { get; set; }
+    public bool IsAvailable { get; set; }
+    
 }

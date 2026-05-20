@@ -8,15 +8,16 @@ public class FirstClassHandler : CabinHandler
 {
     public override CabinResult Handle(Flight flight, CabinClass cabin, int passengerCount)
     {
-        if (cabin != CabinClass.First)
+        if (cabin == CabinClass.First)
         {
             return new CabinResult
             {
                 AvailableSeats = flight.FirstClassSeats,
-                Fare = flight.FirstClassFare
+                Fare = flight.FirstClassFare,
+                IsAvailable = flight.FirstClassSeats >= passengerCount
             };
         }
 
-        return _nextHandler.Handle(flight, cabin, passengerCount);
+        return _nextHandler?.Handle(flight, cabin, passengerCount);
     }
 }

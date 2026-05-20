@@ -8,15 +8,16 @@ public class EconomyHandler : CabinHandler
 {
     public override CabinResult Handle(Flight flight, CabinClass cabin, int passengerCount)
     {
-        if (cabin != CabinClass.Economy)
+        if (cabin == CabinClass.Economy)
         {
             return new CabinResult
             {
                 AvailableSeats = flight.EconomySeats,
-                Fare = flight.EconomyFare
+                Fare = flight.EconomyFare,
+                IsAvailable = flight.EconomySeats >= passengerCount
             };
         }
 
-        return _nextHandler.Handle(flight, cabin, passengerCount);
+        return _nextHandler?.Handle(flight, cabin, passengerCount);
     }
 }

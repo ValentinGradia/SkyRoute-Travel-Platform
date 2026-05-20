@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0+5iUOK0LCY=",
+  "dgSpecHash": "Ey6R9qIKbCo=",
   "success": true,
-  "projectFilePath": "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-BackEnd\\SkyRoute-Travel-Platform-BackEnd.csproj",
+  "projectFilePath": "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-Backend\\SkyRoute-Travel-Platform-BackEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\valen\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",
     "C:\\Users\\valen\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.5\\microsoft.aspnetcore.openapi.10.0.5.nupkg.sha512",

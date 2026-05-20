@@ -7,13 +7,13 @@ namespace SkyRoute_Travel_Platform_BackEnd.Services;
 
 public class FlightService(IEnumerable<IFlightProvider> flightProviders) 
 {
-    public async Task<List<Flight>> SearchFlights(FlightSearchRequestDto request)
+    public async Task<List<FlightSearchResponseDto>> SearchFlights(FlightSearchRequestDto request)
     {
-        var allFlights = new List<Flight>();
+        var allFlights = new List<FlightSearchResponseDto>();
         
         foreach (var provider in flightProviders)
         {
-            IEnumerable<Flight> flights = await provider.SearchFlights(request);
+            IEnumerable<FlightSearchResponseDto> flights = await provider.SearchFlights(request);
             allFlights.AddRange(flights);
         }
         

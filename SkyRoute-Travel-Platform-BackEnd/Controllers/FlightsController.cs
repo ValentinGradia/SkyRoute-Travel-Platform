@@ -13,9 +13,9 @@ namespace SkyRoute_Travel_Platform_BackEnd.Controllers
     {
         // GET api/flights/search
         [HttpGet("search")]
-        public async Task<ActionResult<List<Flight>>> Search([FromQuery] FlightSearchRequestDto request)
+        public async Task<ActionResult<List<FlightSearchResponseDto>>> Search([FromQuery] FlightSearchRequestDto request)
         {
-            List<Flight> flights = await _flightService.SearchFlights(request);
+            List<FlightSearchResponseDto> flights = await _flightService.SearchFlights(request);
             return Ok(flights);
         }
 

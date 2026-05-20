@@ -8,9 +8,10 @@ public abstract class CabinHandler
 {
     protected CabinHandler _nextHandler;
 
-    public void SetNextHandler(CabinHandler nextHandler)
+    public CabinHandler SetNextHandler(CabinHandler nextHandler)
     {
         this._nextHandler = nextHandler;
+        return nextHandler;
     }
     
     public abstract CabinResult Handle(Flight flight, CabinClass cabin, int passengerCount);
