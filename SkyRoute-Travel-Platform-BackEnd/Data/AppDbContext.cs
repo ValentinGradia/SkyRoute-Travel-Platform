@@ -30,8 +30,12 @@ namespace SkyRoute_Travel_Platform_BackEnd.Data
                     Departure = new DateTimeOffset(2026, 5, 29, 10, 0, 0, TimeSpan.Zero),
                     Arrival = new DateTimeOffset(2026, 5, 29, 17, 0, 0, TimeSpan.Zero),
                     Duration = TimeSpan.FromHours(7),
-                    CabinClass = Enums.CabinClass.Economy,
-                    BaseFare = 450.00m
+                    EconomyFare = 450.00m,
+                    BusinessFare = 900.00m,
+                    FirstClassFare = 1500.00m,
+                    EconomySeats = 100,
+                    BusinessSeats = 20,
+                    FirstClassSeats = 10
                 },
                 new
                 {
@@ -43,8 +47,12 @@ namespace SkyRoute_Travel_Platform_BackEnd.Data
                     Departure = new DateTimeOffset(2026, 6, 3, 10, 0, 0, TimeSpan.Zero),
                     Arrival = new DateTimeOffset(2026, 6, 3, 18, 0, 0, TimeSpan.Zero),
                     Duration = TimeSpan.FromHours(8),
-                    CabinClass = Enums.CabinClass.Business,
-                    BaseFare = 320.50m
+                    EconomyFare = 320.50m,
+                    BusinessFare = 640.00m,
+                    FirstClassFare = 1200.00m,
+                    EconomySeats = 150,
+                    BusinessSeats = 0,
+                    FirstClassSeats = 0
                 },
                 new
                 {
@@ -56,8 +64,12 @@ namespace SkyRoute_Travel_Platform_BackEnd.Data
                     Departure = new DateTimeOffset(2026, 6, 8, 10, 0, 0, TimeSpan.Zero),
                     Arrival = new DateTimeOffset(2026, 6, 8, 18, 0, 0, TimeSpan.Zero),
                     Duration = TimeSpan.FromHours(8),
-                    CabinClass = Enums.CabinClass.First,
-                    BaseFare = 500.00m
+                    EconomyFare = 500.00m,
+                    BusinessFare = 1000.00m,
+                    FirstClassFare = 1800.00m,
+                    EconomySeats = 120,
+                    BusinessSeats = 30,
+                    FirstClassSeats = 15
                 }
             );
         }

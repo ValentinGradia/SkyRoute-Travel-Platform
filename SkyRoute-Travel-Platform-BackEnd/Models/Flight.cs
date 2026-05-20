@@ -13,8 +13,14 @@ namespace SkyRoute_Travel_Platform_BackEnd.Models
         public DateTimeOffset Departure { get; private set; }
         public DateTimeOffset Arrival { get; private set; }
         public TimeSpan Duration { get; private set; }
-        public CabinClass CabinClass { get; set; } // This is the cabin class (Economy, Business, First)
-        public decimal BaseFare { get; private set; }
+    
+        public decimal EconomyFare { get; set; }
+        public decimal BusinessFare { get; set; }
+        public decimal FirstClassFare { get; set; }
+    
+        public int EconomySeats { get; set; }
+        public int BusinessSeats { get; set; }
+        public int FirstClassSeats { get; set; }
     }
 }
 
