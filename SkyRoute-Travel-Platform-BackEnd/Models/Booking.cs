@@ -10,6 +10,7 @@ namespace SkyRoute_Travel_Platform_BackEnd.Models
         public Guid Id { get; set; } //Used for database primary key
         public string BookingReference { get; set; } //Used for user-facing reference
         public Guid FlightId { get; set; }
+        public string FlightNumber { get; set; } 
         public string Provider { get; set; }
         public CabinClass CabinClass { get; set; } //What the passenger booked (Economy, Business, First)
         public int PassengerCount { get; set; }

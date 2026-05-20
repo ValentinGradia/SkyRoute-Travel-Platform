@@ -21,7 +21,8 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 builder.Services.AddScoped<IFlightProvider, GlobalAirProvider>();
 builder.Services.AddScoped<IFlightProvider, BudgetWindsProvider>();
 
-builder.Services.AddScoped<FlightService>(); // Aggregate for FlightsController 
+builder.Services.AddScoped<FlightService>(); // Aggregate for FlightsController
+builder.Services.AddScoped<BookingService>(); // Aggregate for BookingsController
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

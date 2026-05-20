@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using SkyRoute_Travel_Platform_BackEnd.Data;
 using SkyRoute_Travel_Platform_BackEnd.DTOs;
 using SkyRoute_Travel_Platform_BackEnd.Models;
@@ -13,6 +14,7 @@ public class BookingService(AppDbContext _dbContext)
         {
             Id = Guid.NewGuid(),
             FlightId = request.FlightId,
+            FlightNumber = request.FlightNumber,
             BookingReference = "SKY-" + Guid.NewGuid().ToString("N").Substring(0, 6).ToUpper(),
             Provider = request.Provider,
             CabinClass = request.CabinClass,
@@ -27,6 +29,12 @@ public class BookingService(AppDbContext _dbContext)
         };
 
         await _dbContext.Bookings.AddAsync(booking);
+        await _dbContext.SaveChangesAsync();
         return booking.BookingReference;
+    }
+    
+    public async Task<Booking> GetBookingByReferenceAsync(string bookingReference)
+    {
+        return await _dbContext.Bookings.FirstOrDefaultAsync(b => b.BookingReference == bookingReference);
     }
 }

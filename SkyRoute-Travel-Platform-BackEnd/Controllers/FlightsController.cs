@@ -20,7 +20,7 @@ namespace SkyRoute_Travel_Platform_BackEnd.Controllers
         }
 
         [HttpGet("{flightNumber}")]
-        public async Task<ActionResult<Flight>> GetByFlightNumber(string flightNumber)
+        public async Task<ActionResult<Flight>> GetByFlightNumber([FromRoute] string flightNumber)
         {
             Flight flight = await _dbContext.Flights.FirstOrDefaultAsync(f => f.FlightNumber == flightNumber);
 
