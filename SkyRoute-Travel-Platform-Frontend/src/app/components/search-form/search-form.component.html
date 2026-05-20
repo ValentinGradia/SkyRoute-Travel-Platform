@@ -1,0 +1,61 @@
+<form class="search-form" (ngSubmit)="submit()">
+	<div class="form-row">
+		<label for="origin">Origin</label>
+		<select id="origin" name="origin" required [(ngModel)]="flightRequest.origin">
+			<option value="" disabled>Select origin</option>
+			<option *ngFor="let airport of airports" [value]="airport.code">
+				{{ airport.label }}
+			</option>
+		</select>
+	</div>
+
+	<div class="form-row">
+		<label for="destination">Destination</label>
+		<select id="destination" name="destination" required [(ngModel)]="flightRequest.destination">
+			<option value="" disabled>Select destination</option>
+			<option *ngFor="let airport of airports" [value]="airport.code">
+				{{ airport.label }}
+			</option>
+		</select>
+	</div>
+
+	<div class="form-row">
+		<label for="departureDate">Departure date</label>
+		<input
+			id="departureDate"
+			name="departureDate"
+			type="date"
+			required
+			[(ngModel)]="departureDateInput"
+		/>
+	</div>
+
+	<div class="form-row">
+		<label for="passengers">Passengers</label>
+		<input
+			id="passengers"
+			name="passengers"
+			type="number"
+			min="1"
+			max="9"
+			required
+			[(ngModel)]="flightRequest.passengers"
+		/>
+	</div>
+
+	<fieldset class="form-row cabin">
+		<legend>Cabin class</legend>
+		<label *ngFor="let option of cabinOptions">
+			<input
+				type="radio"
+				name="cabin"
+				[value]="option"
+				[(ngModel)]="flightRequest.cabin"
+				required
+			/>
+			{{ option }}
+		</label>
+	</fieldset>
+
+	<button type="submit">Search</button>
+</form>
