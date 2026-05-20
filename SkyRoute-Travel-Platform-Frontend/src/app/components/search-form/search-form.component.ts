@@ -3,11 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { IFlightRequest } from '../../interfaces/IFlightRequest';
 import { IFlightResponse } from '../../interfaces/IFlightResponse';
 import { CommonModule } from '@angular/common';
+import { FlightResultsComponent } from '../flight-results/flight-results.component';
 
 @Component({
   selector: 'app-search-form',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, FlightResultsComponent],
   templateUrl: './search-form.component.html',
   styleUrl: './search-form.component.css'
 })

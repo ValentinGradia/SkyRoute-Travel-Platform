@@ -1,0 +1,35 @@
+.results-wrapper {
+	padding: 16px;
+}
+
+.results-table {
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+}
+
+.results-table th,
+.results-table td {
+	border: 1px solid #d6dbe1;
+	padding: 8px 10px;
+	text-align: left;
+}
+
+.results-table th {
+	background: #f4f6f8;
+	font-weight: 600;
+}
+
+button {
+	padding: 6px 10px;
+	border: none;
+	border-radius: 6px;
+	background: #0b5ed7;
+	color: #ffffff;
+	font-weight: 600;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #0a53be;
+}

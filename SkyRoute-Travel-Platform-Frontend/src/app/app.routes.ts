@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { BookingFormComponent } from './components/booking-form/booking-form.component';
+import { FlightResultsComponent } from './components/flight-results/flight-results.component';
 
 export const routes: Routes = [
 	{
@@ -16,4 +17,8 @@ export const routes: Routes = [
 		path: 'bookings',
 		component: BookingFormComponent
 	},
+	{
+		path: 'results',
+		component: FlightResultsComponent
+	}
 ];

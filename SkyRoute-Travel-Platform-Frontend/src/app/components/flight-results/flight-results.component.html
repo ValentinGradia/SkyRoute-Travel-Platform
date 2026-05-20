@@ -1,1 +1,32 @@
-<p>flight-results works!</p>
+<div class="results-wrapper">
+	<table class="results-table">
+		<thead>
+			<tr>
+				<th>Flight</th>
+				<th>Route</th>
+				<th>Departure</th>
+				<th>Arrival</th>
+				<th>Duration</th>
+				<th>Cabin</th>
+				<th>Seats</th>
+				<th>Fare</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr *ngFor="let flight of flights">
+				<td>{{ flight.flightNumber }}</td>
+				<td>{{ flight.origin }} → {{ flight.destination }}</td>
+				<td>{{ flight.departure }}</td>
+				<td>{{ flight.arrival }}</td>
+				<td>{{ flight.duration }}</td>
+				<td>{{ flight.cabinClass }}</td>
+				<td>{{ flight.availableSeats }}</td>
+				<td>{{ flight.fare | number:'1.2-2' }}</td>
+				<td>
+					<button type="button" (click)="selectFlight(flight)">Select</button>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
