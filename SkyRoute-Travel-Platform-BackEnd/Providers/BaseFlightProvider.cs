@@ -2,6 +2,7 @@
 using SkyRoute_Travel_Platform_BackEnd.CabinHandler;
 using SkyRoute_Travel_Platform_BackEnd.Data;
 using SkyRoute_Travel_Platform_BackEnd.DTOs;
+using SkyRoute_Travel_Platform_BackEnd.Enums;
 using SkyRoute_Travel_Platform_BackEnd.Models;
 
 namespace SkyRoute_Travel_Platform_BackEnd.Providers;
@@ -45,5 +46,26 @@ public abstract class BaseFlightProvider(AppDbContext _dbContext, string _provid
                 AvailableSeats = x.CabinResult.AvailableSeats,
                 Fare = x.CabinResult.Fare
             });
+    }
+
+    public async Task UpdateSeats(string flightNumber, CabinClass cabinClass, int seatsToBook)
+    {
+        Flight flight = await _dbContext.Flights.FirstOrDefaultAsync(f => f.FlightNumber == flightNumber);
+        if (flight == null) return;
+
+        switch (cabinClass)
+        {
+            case CabinClass.Economy:
+                flight.EconomySeats -= seatsToBook;
+                break;
+            case CabinClass.Business:
+                flight.BusinessSeats -= seatsToBook;
+                break;
+            case CabinClass.First:
+                flight.FirstClassSeats -= seatsToBook;
+                break;
+        }
+        
+        await _dbContext.SaveChangesAsync();
     }
 }

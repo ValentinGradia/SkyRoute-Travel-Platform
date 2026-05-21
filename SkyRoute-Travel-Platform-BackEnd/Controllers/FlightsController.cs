@@ -18,7 +18,7 @@ namespace SkyRoute_Travel_Platform_BackEnd.Controllers
             List<FlightSearchResponseDto> flights = await _flightService.SearchFlights(request);
             return Ok(flights);
         }
-
+    
         [HttpGet("{flightNumber}")]
         public async Task<ActionResult<Flight>> GetByFlightNumber([FromRoute] string flightNumber)
         {

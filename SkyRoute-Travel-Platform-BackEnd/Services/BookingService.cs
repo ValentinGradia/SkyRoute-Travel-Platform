@@ -2,14 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using SkyRoute_Travel_Platform_BackEnd.Data;
 using SkyRoute_Travel_Platform_BackEnd.DTOs;
+using SkyRoute_Travel_Platform_BackEnd.Enums;
 using SkyRoute_Travel_Platform_BackEnd.Models;
+using SkyRoute_Travel_Platform_BackEnd.Providers;
 
 namespace SkyRoute_Travel_Platform_BackEnd.Services;
 
-public class BookingService(AppDbContext _dbContext)
+public class BookingService(AppDbContext _dbContext, IFlightProvider _flightProvider)
 {
     public async Task<string> CreateBookingAsync([FromBody] BookingRequestDto request)
     {
+
         Booking booking = new Booking
         {
             Id = Guid.NewGuid(),
@@ -27,10 +30,30 @@ public class BookingService(AppDbContext _dbContext)
             CreatedAt = DateTimeOffset.UtcNow
             
         };
-
+        
+        await this.UpdateSeats(request.FlightNumber, request.CabinClass, request.PassengerCount);
         await _dbContext.Bookings.AddAsync(booking);
         await _dbContext.SaveChangesAsync();
         return booking.BookingReference;
+    }
+    
+    private async Task UpdateSeats(string flightNumber, CabinClass cabinClass, int passengers)
+    {
+        var flight = await _dbContext.Flights
+            .FirstOrDefaultAsync(f => f.FlightNumber == flightNumber);
+        
+        switch (cabinClass)
+        {
+            case CabinClass.Economy:
+                flight!.EconomySeats -= passengers;
+                break;
+            case CabinClass.Business:
+                flight!.BusinessSeats -= passengers;
+                break;
+            case CabinClass.First:
+                flight!.FirstClassSeats -= passengers;
+                break;
+        }
     }
     
     public async Task<Booking> GetBookingByReferenceAsync(string bookingReference)

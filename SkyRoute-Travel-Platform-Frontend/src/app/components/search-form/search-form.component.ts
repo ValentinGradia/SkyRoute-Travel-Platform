@@ -1,9 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IFlightRequest } from '../../interfaces/IFlightRequest';
 import { IFlightResponse } from '../../interfaces/IFlightResponse';
 import { CommonModule } from '@angular/common';
 import { FlightResultsComponent } from '../flight-results/flight-results.component';
+import { FlightService } from '../../services/flight.service';
 
 @Component({
   selector: 'app-search-form',
@@ -13,6 +14,9 @@ import { FlightResultsComponent } from '../flight-results/flight-results.compone
   styleUrl: './search-form.component.css'
 })
 export class SearchFormComponent {
+  
+  flightService = inject(FlightService);
+
   flights: IFlightResponse[] = []
   airports = [
     { code: 'EZE', label: 'Buenos Aires (EZE), Argentina' },
@@ -42,7 +46,17 @@ export class SearchFormComponent {
 
     this.flightRequest.departureDate = new Date(this.departureDateInput);
 
-    console.log(this.flightRequest)
+    
+
+    this.flightService.searchFlight(this.flightRequest).subscribe({
+      next: (data) => {
+        this.flights = data;
+        console.log(data);
+      },
+      error: (err) => {
+        console.error(err);
+      }
+    });
   }
 
 }

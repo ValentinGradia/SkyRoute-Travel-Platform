@@ -4,5 +4,7 @@ export interface IFlightRequest
 	destination : string,
 	departureDate : Date,
 	passengers : number,
-	cabin : string
+	cabin : CabinClass
 }
+
+export type CabinClass = 'Economy' | 'Business' | 'FirstClass';
