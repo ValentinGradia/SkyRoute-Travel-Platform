@@ -1,12 +1,19 @@
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using SkyRoute_Travel_Platform_BackEnd.Data;
+using SkyRoute_Travel_Platform_BackEnd.Mappers;
 using SkyRoute_Travel_Platform_BackEnd.Providers;
 using SkyRoute_Travel_Platform_BackEnd.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
-builder.Services.AddControllers();
+builder.Services.AddControllers()
+    .AddJsonOptions(options => {
+        options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+        options.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+    });
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAngular", policy =>
@@ -17,6 +24,11 @@ builder.Services.AddCors(options =>
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseInMemoryDatabase("SkyRouteDb")); // We define an in-memory database.
+
+// Add AutoMapper
+builder.Services.AddAutoMapper(config => {
+    config.AddProfile<FlightMappingProfile>();
+});
 
 builder.Services.AddScoped<IFlightProvider, GlobalAirProvider>();
 builder.Services.AddScoped<IFlightProvider, BudgetWindsProvider>();

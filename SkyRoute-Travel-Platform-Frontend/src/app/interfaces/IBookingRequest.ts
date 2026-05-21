@@ -1,11 +1,14 @@
+import { CabinClass } from "./IFlightRequest";
+
 export interface IBookingRequest {
-	flightId: string;
-	flightNumber: string;
-	provider: string;
-	passengerCount: number;
-	cabinClass: string;
-	finalPrice: number;
-	fullName: string;
-	email: string;
-	documentNumber: number;
+	FlightId: string;
+	FlightNumber: string;
+	Provider: string;
+	PassengerCount: number;
+	CabinClass: CabinClass;
+	FinalPrice: number;
+	PricePerPassenger: number,
+	FullName: string;
+	Email: string;
+	DocumentNumber: number;
 }

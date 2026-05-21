@@ -23,7 +23,7 @@ public class BookingService(AppDbContext _dbContext, IFlightProvider _flightProv
             CabinClass = request.CabinClass,
             TotalPrice = request.FinalPrice,
             PassengerCount = request.PassengerCount,
-            PerPassengerPrice = request.FinalPrice / request.PassengerCount,
+            PerPassengerPrice = request.PricePerPassenger,
             FullName = request.FullName,
             Email = request.Email,
             DocumentNumber = request.DocumentNumber,

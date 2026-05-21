@@ -14,11 +14,7 @@ export const routes: Routes = [
 		component : SearchFormComponent
 	},
 	{
-		path: 'bookings',
+		path: 'bookings/:flightNumber',
 		component: BookingFormComponent
-	},
-	{
-		path: 'results',
-		component: FlightResultsComponent
 	}
 ];

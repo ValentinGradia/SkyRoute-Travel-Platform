@@ -11,6 +11,7 @@ namespace SkyRoute_Travel_Platform_BackEnd.DTOs
         public string Provider { get; set; }
         public int PassengerCount { get; set; }
         public CabinClass CabinClass { get; set; }
+        public decimal PricePerPassenger { get; set; }
         public decimal FinalPrice { get; set; }
         public string FullName { get; set; }
         public string Email { get; set; }

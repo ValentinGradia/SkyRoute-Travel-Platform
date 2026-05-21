@@ -117,3 +117,8 @@ C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\TestProje
 C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\TestProject1\obj\Debug\net10.0\TestProject1.pdb
 C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\TestProject1\obj\Debug\net10.0\TestProject1.genruntimeconfig.cache
 C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\TestProject1\obj\Debug\net10.0\ref\TestProject1.dll
+C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\TestProject1\bin\Debug\net10.0\AutoMapper.dll
+C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\TestProject1\bin\Debug\net10.0\Microsoft.IdentityModel.Abstractions.dll
+C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\TestProject1\bin\Debug\net10.0\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\TestProject1\bin\Debug\net10.0\Microsoft.IdentityModel.Logging.dll
+C:\Users\valen\RiderProjects\SkyRoute\SkyRoute-Travel-Platform-BackEnd\TestProject1\bin\Debug\net10.0\Microsoft.IdentityModel.Tokens.dll
