@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "jSAUmCZDr/E=",
+  "dgSpecHash": "zSpnoZ/apkg=",
   "success": true,
-  "projectFilePath": "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-BackEnd\\SkyRoute-Travel-Platform-BackEnd.csproj",
+  "projectFilePath": "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-Backend\\SkyRoute-Travel-Platform-BackEnd.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\valen\\.nuget\\packages\\automapper\\16.1.1\\automapper.16.1.1.nupkg.sha512",
     "C:\\Users\\valen\\.nuget\\packages\\castle.core\\5.1.1\\castle.core.5.1.1.nupkg.sha512",

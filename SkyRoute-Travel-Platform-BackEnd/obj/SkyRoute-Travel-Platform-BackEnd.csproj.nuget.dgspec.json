@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-BackEnd\\SkyRoute-Travel-Platform-BackEnd.csproj": {}
+    "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-Backend\\SkyRoute-Travel-Platform-BackEnd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-BackEnd\\SkyRoute-Travel-Platform-BackEnd.csproj": {
+    "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-Backend\\SkyRoute-Travel-Platform-BackEnd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-BackEnd\\SkyRoute-Travel-Platform-BackEnd.csproj",
+        "projectUniqueName": "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-Backend\\SkyRoute-Travel-Platform-BackEnd.csproj",
         "projectName": "SkyRoute-Travel-Platform-BackEnd",
-        "projectPath": "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-BackEnd\\SkyRoute-Travel-Platform-BackEnd.csproj",
+        "projectPath": "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-Backend\\SkyRoute-Travel-Platform-BackEnd.csproj",
         "packagesPath": "C:\\Users\\valen\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-BackEnd\\obj\\",
+        "outputPath": "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-Backend\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-BackEnd\\NuGet.Config",
+          "C:\\Users\\valen\\RiderProjects\\SkyRoute\\SkyRoute-Travel-Platform-Backend\\NuGet.Config",
           "C:\\Users\\valen\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"

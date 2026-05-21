@@ -1,66 +1,124 @@
+@keyframes slideUpFade {
+	from {
+		opacity: 0;
+		transform: translateY(20px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 .search-form-wrapper {
-	min-height: 100vh;
+	min-height: calc(100vh - 60px);
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	padding: 24px;
+	background-color: #f4f7f6;
+	background-image: radial-gradient(#cbd2d9 1px, transparent 1px);
+	background-size: 24px 24px;
 }
 
 .search-form {
-	max-width: 420px;
+	width: 100%;
+	max-width: 450px;
 	display: grid;
-	gap: 12px;
-	padding: 16px;
-	border: 1px solid #d6dbe1;
-	border-radius: 10px;
+	gap: 16px;
+	padding: 32px 36px;
+	border: none;
+	border-radius: 16px;
 	background: #ffffff;
+	box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+	animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.form-title {
+	margin-top: 0;
+	margin-bottom: 8px;
+	font-size: 1.5rem;
+	color: #1f2933;
+	text-align: center;
 }
 
 .form-row {
 	display: grid;
-	gap: 6px;
+	gap: 8px;
 }
 
 label {
 	font-size: 14px;
 	font-weight: 600;
-	color: #1f2933;
+	color: #3e4c59;
 }
 
 select,
 input[type="date"],
 input[type="number"] {
-	padding: 8px 10px;
-	border: 1px solid #c8d0d8;
-	border-radius: 6px;
-	font-size: 14px;
+	padding: 12px 14px;
+	border: 1px solid #cbd2d9;
+	border-radius: 8px;
+	font-size: 15px;
+	color: #1f2933;
+	transition: all 0.2s ease-in-out;
+	background-color: #f8fafc;
+}
+
+select:focus,
+input[type="date"]:focus,
+input[type="number"]:focus {
+	outline: none;
+	border-color: #0b5ed7;
+	box-shadow: 0 0 0 3px rgba(11, 94, 215, 0.15);
+	background-color: #ffffff;
 }
 
 .cabin {
-	border: 1px solid #c8d0d8;
+	border: 1px solid #cbd2d9;
 	border-radius: 8px;
-	padding: 10px;
-	display: grid;
-	gap: 6px;
+	padding: 16px;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+	background-color: #f8fafc;
+}
+
+.cabin legend {
+	font-weight: 600;
+	color: #3e4c59;
+	font-size: 14px;
+	padding: 0 4px;
 }
 
 .cabin label {
 	display: flex;
-	gap: 8px;
+	gap: 6px;
 	align-items: center;
 	font-weight: 500;
+	font-size: 14.5px;
+	cursor: pointer;
 }
 
-button {
-	padding: 10px 14px;
+button[type="submit"] {
+	padding: 14px;
 	border: none;
 	border-radius: 8px;
 	background: #0b5ed7;
 	color: #ffffff;
 	font-weight: 600;
+	font-size: 16px;
 	cursor: pointer;
+	transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+	margin-top: 12px;
 }
 
-button:hover {
+button[type="submit"]:hover {
 	background: #0a53be;
+	transform: translateY(-2px);
+	box-shadow: 0 6px 16px rgba(11, 94, 215, 0.25);
+}
+
+button[type="submit"]:active {
+	transform: translateY(0);
+	box-shadow: none;
 }

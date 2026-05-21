@@ -5,6 +5,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { IBookingRequest } from '../../interfaces/IBookingRequest';
 import { FlightService } from '../../services/flight.service';
 import { BookingService } from '../../services/booking.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-booking-form',
@@ -18,6 +19,7 @@ export class BookingFormComponent implements OnInit {
   router = inject(Router);
   flightService = inject(FlightService);
   bookingService = inject(BookingService);
+
 
   bookingRequest: IBookingRequest = {
     FlightId: '',
@@ -61,10 +63,15 @@ export class BookingFormComponent implements OnInit {
   }
 
   submit(): void {
-    console.log(this.bookingRequest);
     this.bookingService.createBooking(this.bookingRequest).subscribe({
       next: (data) => {
-        console.log(data)
+        Swal.fire({
+          icon: "success",
+          title: "Booking confirmed",
+          text: `${data}`,
+          showConfirmButton: true
+        });
+        this.router.navigateByUrl('/search')
       }
     })
   }

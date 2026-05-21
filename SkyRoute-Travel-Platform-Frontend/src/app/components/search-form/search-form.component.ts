@@ -16,6 +16,8 @@ import { FlightService } from '../../services/flight.service';
 export class SearchFormComponent {
   
   flightService = inject(FlightService);
+  showResults : boolean = false;
+  isLoading : boolean = false;
 
   flights: IFlightResponse[] = []
   @Output() returnFlightsResults = new EventEmitter<IFlightResponse[]>
@@ -47,12 +49,16 @@ export class SearchFormComponent {
     }
     this.flightRequest.departureDate = new Date(this.departureDateInput);
     
+    this.isLoading = true;
     this.flightService.searchFlight(this.flightRequest).subscribe({
       next: (data) => {
         this.flights = data;
+        this.showResults = true;
+        this.isLoading = false;
       },
       error: (err) => {
         console.error(err);
+        this.isLoading = false;
       }
     });
   }

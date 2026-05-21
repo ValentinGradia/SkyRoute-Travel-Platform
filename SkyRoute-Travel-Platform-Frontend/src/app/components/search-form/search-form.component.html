@@ -1,5 +1,6 @@
 <div class="search-form-wrapper">
 	<form class="search-form" (ngSubmit)="submit()">
+		<h2 class="form-title">Search Flights</h2>
 		<div class="form-row">
 			<label for="origin">Origin</label>
 			<select id="origin" name="origin" required [(ngModel)]="flightRequest.origin">
@@ -61,4 +62,15 @@
 		<button type="submit">Search</button>
 	</form>
 </div>
-<app-flight-results [flights]="flights" [passengers]="flightRequest.passengers"></app-flight-results>
+
+@if(isLoading) {
+	<div class="spinner-container">
+		<div class="spinner-border m-5" style="height: 80px; width: 80px;" role="status"></div>
+	</div>
+}
+
+@if(showResults && !isLoading)
+{
+	<app-flight-results [flights]="flights" [passengers]="flightRequest.passengers"></app-flight-results>
+}
+		
