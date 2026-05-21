@@ -17,8 +17,8 @@
 			<tr *ngFor="let flight of flights">
 				<td>{{ flight.flightNumber }}</td>
 				<td>{{ flight.origin }} → {{ flight.destination }}</td>
-				<td>{{ flight.departure }}</td>
-				<td>{{ flight.arrival }}</td>
+				<td>{{ flight.departure | date:'yyyy-MM-dd HH:mm' }}</td>
+				<td>{{ flight.arrival | date:'yyyy-MM-dd HH:mm' }}</td>
 				<td>{{ flight.duration }}</td>
 				<td>{{ flight.cabinClass }}</td>
 				<td>{{ flight.availableSeats }}</td>

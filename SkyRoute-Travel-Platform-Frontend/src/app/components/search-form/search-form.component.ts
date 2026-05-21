@@ -1,4 +1,4 @@
-import { Component, inject } from '@angular/core';
+import { Component, EventEmitter, inject, Output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { IFlightRequest } from '../../interfaces/IFlightRequest';
 import { IFlightResponse } from '../../interfaces/IFlightResponse';
@@ -18,6 +18,8 @@ export class SearchFormComponent {
   flightService = inject(FlightService);
 
   flights: IFlightResponse[] = []
+  @Output() returnFlightsResults = new EventEmitter<IFlightResponse[]>
+  
   airports = [
     { code: 'EZE', label: 'Buenos Aires (EZE), Argentina' },
     { code: 'AEP', label: 'Buenos Aires (AEP), Argentina' },
@@ -43,15 +45,11 @@ export class SearchFormComponent {
     if (!this.departureDateInput) {
       return;
     }
-
     this.flightRequest.departureDate = new Date(this.departureDateInput);
-
     
-
     this.flightService.searchFlight(this.flightRequest).subscribe({
       next: (data) => {
         this.flights = data;
-        console.log(data);
       },
       error: (err) => {
         console.error(err);
