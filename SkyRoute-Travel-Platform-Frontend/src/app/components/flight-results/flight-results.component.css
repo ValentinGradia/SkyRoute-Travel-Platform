@@ -29,6 +29,38 @@
 	font-weight: 600;
 }
 
+.sort-controls {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	gap: 8px;
+	margin-bottom: 16px;
+}
+
+.sort-controls label {
+	font-size: 14px;
+	font-weight: 600;
+	color: #3e4c59;
+}
+
+.sort-controls select {
+	padding: 8px 12px;
+	border: 1px solid #cbd2d9;
+	border-radius: 8px;
+	font-size: 14px;
+	color: #1f2933;
+	background-color: #f8fafc;
+	cursor: pointer;
+	outline: none;
+	transition: all 0.2s ease-in-out;
+}
+
+.sort-controls select:focus {
+	border-color: #0b5ed7;
+	box-shadow: 0 0 0 3px rgba(11, 94, 215, 0.15);
+	background-color: #ffffff;
+}
+
 .results-table {
 	width: 100%;
 	border-collapse: collapse;

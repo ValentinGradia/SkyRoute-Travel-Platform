@@ -1,5 +1,15 @@
 <div class="results-wrapper">
 	<h3 class="results-title">Available Flights</h3>
+	
+	<div class="sort-controls">
+		<label for="sort">Sort by:</label>
+		<select id="sort" (change)="onSortChange($event)">
+			<option value="price" [selected]="sortCriteria === 'price'">Price (Lowest first)</option>
+			<option value="departure" [selected]="sortCriteria === 'departure'">Departure Time (Earliest first)</option>
+			<option value="duration" [selected]="sortCriteria === 'duration'">Duration (Shortest first)</option>
+		</select>
+	</div>
+
 	<table class="results-table">
 		<thead>
 			<tr>
