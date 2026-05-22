@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using SkyRoute_Travel_Platform_BackEnd.Data;
 using SkyRoute_Travel_Platform_BackEnd.DTOs;
+using SkyRoute_Travel_Platform_BackEnd.Interfaces;
 using SkyRoute_Travel_Platform_BackEnd.Models;
 using SkyRoute_Travel_Platform_BackEnd.Services;
 
@@ -9,7 +10,7 @@ namespace SkyRoute_Travel_Platform_BackEnd.Controllers
 {
     [ApiController]
     [Route("api/flights")]
-    public class FlightsController(FlightService _flightService, AppDbContext _dbContext) : ControllerBase
+    public class FlightsController(IFlightService _flightService, AppDbContext _dbContext) : ControllerBase
     {
         // GET api/flights/search
         [HttpGet("search")]

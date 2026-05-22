@@ -3,12 +3,13 @@ using Microsoft.EntityFrameworkCore;
 using SkyRoute_Travel_Platform_BackEnd.Data;
 using SkyRoute_Travel_Platform_BackEnd.DTOs;
 using SkyRoute_Travel_Platform_BackEnd.Enums;
+using SkyRoute_Travel_Platform_BackEnd.Interfaces;
 using SkyRoute_Travel_Platform_BackEnd.Models;
 using SkyRoute_Travel_Platform_BackEnd.Providers;
 
 namespace SkyRoute_Travel_Platform_BackEnd.Services;
 
-public class BookingService(AppDbContext _dbContext, IFlightProvider _flightProvider)
+public class BookingService(AppDbContext _dbContext) : IBookingService
 {
     public async Task<string> CreateBookingAsync([FromBody] BookingRequestDto request)
     {
@@ -37,7 +38,7 @@ public class BookingService(AppDbContext _dbContext, IFlightProvider _flightProv
         return booking.BookingReference;
     }
     
-    private async Task UpdateSeats(string flightNumber, CabinClass cabinClass, int passengers)
+    public async Task UpdateSeats(string flightNumber, CabinClass cabinClass, int passengers)
     {
         var flight = await _dbContext.Flights
             .FirstOrDefaultAsync(f => f.FlightNumber == flightNumber);

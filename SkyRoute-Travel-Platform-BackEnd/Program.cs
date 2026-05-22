@@ -1,6 +1,7 @@
 using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using SkyRoute_Travel_Platform_BackEnd.Data;
+using SkyRoute_Travel_Platform_BackEnd.Interfaces;
 using SkyRoute_Travel_Platform_BackEnd.Mappers;
 using SkyRoute_Travel_Platform_BackEnd.Providers;
 using SkyRoute_Travel_Platform_BackEnd.Services;
@@ -33,8 +34,8 @@ builder.Services.AddAutoMapper(config => {
 builder.Services.AddScoped<IFlightProvider, GlobalAirProvider>();
 builder.Services.AddScoped<IFlightProvider, BudgetWindsProvider>();
 
-builder.Services.AddScoped<FlightService>(); // Aggregate for FlightsController
-builder.Services.AddScoped<BookingService>(); // Aggregate for BookingsController
+builder.Services.AddScoped<IFlightService, FlightService>(); // Aggregate for FlightsController
+builder.Services.AddScoped<IBookingService, BookingService>(); // Aggregate for BookingsController
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
