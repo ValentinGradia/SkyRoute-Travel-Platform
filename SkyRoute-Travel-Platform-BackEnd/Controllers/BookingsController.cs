@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using SkyRoute_Travel_Platform_BackEnd.Data;
 using SkyRoute_Travel_Platform_BackEnd.DTOs;
+using SkyRoute_Travel_Platform_BackEnd.Interfaces;
 using SkyRoute_Travel_Platform_BackEnd.Models;
 using SkyRoute_Travel_Platform_BackEnd.Services;
 
@@ -8,7 +9,7 @@ namespace SkyRoute_Travel_Platform_BackEnd.Controllers
 {
     [ApiController]
     [Route("api/bookings")]
-    public class BookingsController(BookingService bookingService) : ControllerBase
+    public class BookingsController(IBookingService bookingService) : ControllerBase
     {
         // POST api/bookings
         [HttpPost]

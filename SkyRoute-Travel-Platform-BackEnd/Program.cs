@@ -34,8 +34,10 @@ builder.Services.AddAutoMapper(config => {
 builder.Services.AddScoped<IFlightProvider, GlobalAirProvider>();
 builder.Services.AddScoped<IFlightProvider, BudgetWindsProvider>();
 
-builder.Services.AddScoped<IFlightService, FlightService>(); // Aggregate for FlightsController
-builder.Services.AddScoped<IBookingService, BookingService>(); // Aggregate for BookingsController
+builder.Services.AddScoped<IFlightService, FlightService>(); 
+builder.Services.AddScoped<IBookingService, BookingService>(); 
+builder.Services.AddScoped<BookingService>();// Aggregate for BookingsController
+builder.Services.AddScoped<FlightService>();// Aggregate for FlightsController
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
