@@ -19,7 +19,9 @@ export class FlightService {
   {
     const params = new HttpParams()
       .set('Origin', request.origin)
+      .set('CountryOrigin', request.countryOrigin)
       .set('Destination', request.destination)
+      .set('CountryDestination', request.countryDestination)
       .set('DepartureDate', new Date(request.departureDate).toISOString())
       .set('Passengers', request.passengers)
       .set('CabinClass', request.cabin); 

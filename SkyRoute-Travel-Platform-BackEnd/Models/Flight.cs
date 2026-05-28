@@ -9,7 +9,9 @@ namespace SkyRoute_Travel_Platform_BackEnd.Models
         public string Provider { get; set; }
         public string FlightNumber { get; set; }
         public string Origin { get; set; }
+        public string CountryOrigin {get; set;}
         public string Destination { get; set; }
+        public string CountryDestination {get; set;}
         public DateTimeOffset Departure { get; set; }
         public DateTimeOffset Arrival { get; set; }
         public TimeSpan Duration { get; set; }

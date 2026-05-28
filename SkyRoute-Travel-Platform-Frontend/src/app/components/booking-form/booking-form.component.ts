@@ -34,6 +34,8 @@ export class BookingFormComponent implements OnInit {
     DocumentNumber: null as any
   };
 
+  isDomesticFlight: boolean = false;
+
   ngOnInit(): void {
     const flightNumber = this.route.snapshot.paramMap.get('flightNumber');
     
@@ -50,13 +52,11 @@ export class BookingFormComponent implements OnInit {
     if (flightNumber) {
       this.flightService.searchFlightByFlightNumber(flightNumber).subscribe({
       next: (data) => {
+        this.isDomesticFlight = data.countryOrigin === data.countryDestination;
         this.bookingRequest.FlightId = data.id;
         this.bookingRequest.FlightNumber = flightNumber;
         this.bookingRequest.Provider = data.provider;
         this.bookingRequest.PricePerPassenger = this.bookingRequest.FinalPrice / this.bookingRequest.PassengerCount;
-      },
-      error: (err) => {
-        console.error(err);
       }
     });
     }

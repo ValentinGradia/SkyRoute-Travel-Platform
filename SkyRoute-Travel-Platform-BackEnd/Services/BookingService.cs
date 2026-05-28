@@ -51,7 +51,7 @@ public class BookingService(AppDbContext _dbContext) : IBookingService
             case CabinClass.Business:
                 flight!.BusinessSeats -= passengers;
                 break;
-            case CabinClass.First:
+            case CabinClass.FirstClass:
                 flight!.FirstClassSeats -= passengers;
                 break;
         }

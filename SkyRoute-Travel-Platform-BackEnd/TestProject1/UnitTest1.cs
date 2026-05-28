@@ -54,7 +54,9 @@ public class UnitTest1
         FlightSearchRequestDto searchRequestDto = new FlightSearchRequestDto()
         {
             Origin = "AEP",
+            CountryOrigin = "Argentina",
             Destination = "MEX",
+            CountryDestination = "Mexico",
             DepartureDate = new DateTimeOffset(2026, 5, 29, 10, 0, 0, TimeSpan.Zero),
             Passengers = 1,
             CabinClass = CabinClass.Economy
@@ -65,7 +67,9 @@ public class UnitTest1
             Provider = "GlobalAir",
             FlightNumber = "BW200",
             Origin = "AEP",
+            CountryOrigin = "Argentina",
             Destination = "MEX",
+            CountryDestination = "Mexico",
             Departure = new DateTimeOffset(2026, 5, 29, 10, 0, 0, TimeSpan.Zero),
             Arrival = new DateTimeOffset(2026, 5, 29, 17, 0, 0, TimeSpan.Zero),
             Duration = TimeSpan.FromHours(7),

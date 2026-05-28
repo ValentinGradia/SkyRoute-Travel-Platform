@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SkyRoute-Travel-Platform-BackEnd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b86fc63b779e720f619c9725e0c3de4a76f404d3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+139be7e3a032cb6dbe5b5a3abfd0dc8c1a801126")]
 [assembly: System.Reflection.AssemblyProductAttribute("SkyRoute-Travel-Platform-BackEnd")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SkyRoute-Travel-Platform-BackEnd")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

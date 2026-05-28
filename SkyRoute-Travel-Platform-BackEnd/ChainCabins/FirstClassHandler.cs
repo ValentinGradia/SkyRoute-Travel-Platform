@@ -8,7 +8,7 @@ public class FirstClassHandler : CabinHandler
 {
     public override CabinResult Handle(Flight flight, CabinClass cabin, int passengerCount)
     {
-        if (cabin == CabinClass.First)
+        if (cabin == CabinClass.FirstClass)
         {
             return new CabinResult
             {

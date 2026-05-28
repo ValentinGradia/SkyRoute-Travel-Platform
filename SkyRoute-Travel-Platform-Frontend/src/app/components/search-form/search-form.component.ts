@@ -31,11 +31,13 @@ export class SearchFormComponent {
     { code: 'JFK', label: 'New York (JFK), USA' }
   ];
 
-  cabinOptions = ['Economy', 'Business', 'First Class'];
+  cabinOptions = ['Economy', 'Business', 'FirstClass'];
 
   flightRequest: IFlightRequest = {
     origin: '',
+    countryOrigin: '',
     destination: '',
+    countryDestination: '',
     departureDate: new Date(),
     passengers: 1,
     cabin: 'Economy'
@@ -48,6 +50,18 @@ export class SearchFormComponent {
       return;
     }
     this.flightRequest.departureDate = new Date(this.departureDateInput);
+
+    const originAirport = this.airports.find(a => a.code === this.flightRequest.origin);
+    if (originAirport) {
+      const parts = originAirport.label.split(',');
+      this.flightRequest.countryOrigin = parts[parts.length - 1].trim();
+    }
+
+    const destinationAirport = this.airports.find(a => a.code === this.flightRequest.destination);
+    if (destinationAirport) {
+      const parts = destinationAirport.label.split(',');
+      this.flightRequest.countryDestination = parts[parts.length - 1].trim();
+    }
     
     this.isLoading = true;
     this.flightService.searchFlight(this.flightRequest).subscribe({
@@ -57,7 +71,6 @@ export class SearchFormComponent {
         this.isLoading = false;
       },
       error: (err) => {
-        console.error(err);
         this.isLoading = false;
       }
     });
