@@ -29,7 +29,7 @@ export class FlightResultsComponent {
 
   @Input() passengers: number = 1;
   
-  sortCriteria: 'price' | 'duration' | 'departure' = 'price';
+  sortCriteria: 'price' | 'duration' | 'departure' = 'price'; //Price is the initial value
 
   sortFlights(): void {
     const flightCopy = [...this._flights];

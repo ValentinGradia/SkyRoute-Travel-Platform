@@ -73,6 +73,11 @@ Used to process pricing and seat availability based on the selected Cabin Class.
 - **SRP & OCP**: Each handler manages only one specific cabin type. New cabins (e.g., Premium Economy) can be added without modifying existing code.
 - **Decoupling**: The caller invokes the chain oblivious to which handler ultimately resolves the request.
 
+### Business Rules
+
+- **GlobalAir**: Base fare + 15% fuel surcharge. Always round the final price to 2 decimal places.
+- **BudgetWings**: Base fare − 10% promotional discount. The minimum final price is $29.99. The discount is always applied to the base fare only.
+
 ## Frontend Architecture
 
 The frontend implement a Component-Based Architecture through 3 layers.

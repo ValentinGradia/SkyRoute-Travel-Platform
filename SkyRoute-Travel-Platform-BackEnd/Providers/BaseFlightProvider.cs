@@ -44,7 +44,7 @@ public abstract class BaseFlightProvider(AppDbContext _dbContext, string _provid
                 // Only the cabin that user requested
                 CabinClass = request.CabinClass.ToString(),
                 AvailableSeats = x.CabinResult.AvailableSeats,
-                Fare = x.CabinResult.Fare
+                Fare = CalculatePrice((x.CabinResult.Fare))
             });
     }
     
