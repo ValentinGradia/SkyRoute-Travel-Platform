@@ -3,6 +3,9 @@ using SkyRoute_Travel_Platform_BackEnd.Enums;
 
 namespace SkyRoute_Travel_Platform_BackEnd.Models
 {
+    /// <summary>
+    /// Represents a flight offered by a provider.
+    /// </summary>
     public class Flight
     {
         public Guid Id { get; set; }

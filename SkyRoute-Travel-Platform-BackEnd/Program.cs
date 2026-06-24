@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using SkyRoute_Travel_Platform_BackEnd.Data;
 using SkyRoute_Travel_Platform_BackEnd.Interfaces;
 using SkyRoute_Travel_Platform_BackEnd.Mappers;
+using SkyRoute_Travel_Platform_BackEnd.Middleware;
 using SkyRoute_Travel_Platform_BackEnd.Providers;
 using SkyRoute_Travel_Platform_BackEnd.Services;
 
@@ -33,6 +34,8 @@ builder.Services.AddAutoMapper(config => {
 
 builder.Services.AddScoped<IFlightProvider, GlobalAirProvider>();
 builder.Services.AddScoped<IFlightProvider, BudgetWindsProvider>();
+builder.Services.AddScoped<IFlightProvider, ArcticAirProvider>();
+
 
 builder.Services.AddScoped<IFlightService, FlightService>(); 
 builder.Services.AddScoped<IBookingService, BookingService>(); 
@@ -48,6 +51,8 @@ using (var scope = app.Services.CreateScope())
     var dbContext = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     dbContext.Database.EnsureCreated();
 }
+
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 if (app.Environment.IsDevelopment())
 {

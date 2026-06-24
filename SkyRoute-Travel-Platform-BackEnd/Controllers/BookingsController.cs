@@ -13,17 +13,17 @@ namespace SkyRoute_Travel_Platform_BackEnd.Controllers
     {
         // POST api/bookings
         [HttpPost]
-        public ActionResult<string> Create([FromBody] BookingRequestDto request)
+        public async Task<ActionResult<string>> Create([FromBody] BookingRequestDto request)
         {
-            string bookingReference = bookingService.CreateBookingAsync(request).Result;
-
+            string bookingReference = await bookingService.CreateBookingAsync(request);
+            
             return Ok(bookingReference);
         }
 
         [HttpGet("{bookingReference}")]
-        public ActionResult<Booking> GetByReference([FromRoute] string bookingReference)
+        public async Task<ActionResult<Booking>> GetByReference([FromRoute] string bookingReference)
         {
-            Booking booking = bookingService.GetBookingByReferenceAsync(bookingReference).Result;
+            Booking booking = await bookingService.GetBookingByReferenceAsync(bookingReference);
 
             if (booking == null)
             {
